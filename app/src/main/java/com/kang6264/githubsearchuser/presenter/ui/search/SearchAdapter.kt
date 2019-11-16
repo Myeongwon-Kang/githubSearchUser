@@ -7,11 +7,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.kang6264.githubsearchuser.data.remote.api.model.User
 import com.kang6264.githubsearchuser.databinding.ItemSearchUserBinding
+import com.kang6264.githubsearchuser.presenter.ui.MainViewModel
 
-class SearchAdapter : PagedListAdapter<User, SearchAdapter.SearchViewHolder>(
+class SearchAdapter(val mainViewModel: MainViewModel) : PagedListAdapter<User, SearchAdapter.SearchViewHolder>(
     REPO_COMPARATOR
 ){
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
         val binding = ItemSearchUserBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return SearchViewHolder(binding)
@@ -23,14 +23,15 @@ class SearchAdapter : PagedListAdapter<User, SearchAdapter.SearchViewHolder>(
         }
     }
 
-    class SearchViewHolder(val binding : ItemSearchUserBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class SearchViewHolder(val binding : ItemSearchUserBinding) : RecyclerView.ViewHolder(binding.root){
 
         fun bind(user : User){
             binding.apply {
                 userItem = user
+                viewModel = mainViewModel
             }
             //binding.viewModel = SearchItemViewModel(user)
-            binding.executePendingBindings()
+            //binding.executePendingBindings()
         }
     }
 

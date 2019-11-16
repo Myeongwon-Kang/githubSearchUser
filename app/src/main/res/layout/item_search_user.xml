@@ -8,11 +8,17 @@
         <variable
             name="userItem"
             type="com.kang6264.githubsearchuser.data.remote.api.model.User" />
+        <variable
+            name="viewModel"
+            type="com.kang6264.githubsearchuser.presenter.ui.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{() -> viewModel.onClickUser(userItem.login)}"
         android:orientation="vertical">
 
         <com.facebook.drawee.view.SimpleDraweeView
