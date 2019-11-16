@@ -1,17 +1,16 @@
-package com.kang6264.githubsearchuser.ui
+package com.kang6264.githubsearchuser.presenter.ui.search
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.kang6264.githubsearchuser.base.BaseViewModel
 import com.kang6264.githubsearchuser.data.remote.api.model.User
 import com.kang6264.githubsearchuser.databinding.ItemSearchUserBinding
 
-class SearchAdapter : PagedListAdapter<User, SearchAdapter.SearchViewHolder>(REPO_COMPARATOR){
+class SearchAdapter : PagedListAdapter<User, SearchAdapter.SearchViewHolder>(
+    REPO_COMPARATOR
+){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
         val binding = ItemSearchUserBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -20,13 +19,17 @@ class SearchAdapter : PagedListAdapter<User, SearchAdapter.SearchViewHolder>(REP
 
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
         getItem(position)?.let {
-            holder.bind()
+            holder.bind(it)
         }
     }
 
     class SearchViewHolder(val binding : ItemSearchUserBinding) : RecyclerView.ViewHolder(binding.root){
 
-        fun bind(){
+        fun bind(user : User){
+            binding.apply {
+                userItem = user
+            }
+            //binding.viewModel = SearchItemViewModel(user)
             binding.executePendingBindings()
         }
     }

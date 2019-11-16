@@ -1,4 +1,4 @@
-package com.kang6264.githubsearchuser.network
+package com.kang6264.githubsearchuser.data.remote.api.model.network
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.kang6264.githubsearchuser.data.remote.api.model.User
