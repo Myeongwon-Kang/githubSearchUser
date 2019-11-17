@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <import type="com.kang6264.githubsearchuser.utils.UtilKt"/>
 
         <variable
             name="repo"
@@ -35,23 +35,76 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/repoName" />
 
-        <TextView
-            android:id="@+id/stargazersCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{String.valueOf(repo.stargazers_count)}"
+        <LinearLayout
+            android:id="@+id/startLayout"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="vertical"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/repoName"
-            tools:text="Star" />
+            app:layout_constraintTop_toBottomOf="@+id/repoName">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@{String.valueOf(repo.forks_count)}"
-            app:layout_constraintLeft_toRightOf="@+id/stargazersCount"
-            app:layout_constraintTop_toTopOf="@+id/stargazersCount" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Star" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(repo.stargazers_count)}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/forkLayout"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toRightOf="@+id/startLayout"
+            app:layout_constraintTop_toBottomOf="@+id/repoName">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fork" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(repo.forks_count)}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sizeLayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toRightOf="@+id/forkLayout"
+            app:layout_constraintTop_toBottomOf="@+id/repoName">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{UtilKt.getSizeString(repo.size)}" />
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

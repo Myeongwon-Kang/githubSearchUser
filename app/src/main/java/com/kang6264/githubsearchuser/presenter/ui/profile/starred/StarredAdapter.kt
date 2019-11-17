@@ -5,9 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.kang6264.githubsearchuser.data.remote.api.model.Repos
 import com.kang6264.githubsearchuser.data.remote.api.model.Starred
-import com.kang6264.githubsearchuser.databinding.RepositoriesItemBinding
 import com.kang6264.githubsearchuser.databinding.StarredItemBinding
 
 class StarredAdapter(val viewModel: StarredViewModel) : PagedListAdapter<Starred, StarredAdapter.ViewHolder>(
