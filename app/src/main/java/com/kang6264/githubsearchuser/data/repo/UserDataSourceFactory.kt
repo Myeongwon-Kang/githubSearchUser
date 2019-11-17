@@ -6,9 +6,9 @@ import com.kang6264.githubsearchuser.data.network.GithubApi
 import com.kang6264.githubsearchuser.data.remote.api.model.User
 import io.reactivex.disposables.CompositeDisposable
 
-class UserDataSourceFactory(val compositeDisposable: CompositeDisposable,
-                            val query : String,
-                            val api: GithubApi) : DataSource.Factory<Int, User>(){
+class UserDataSourceFactory(private val compositeDisposable: CompositeDisposable,
+                            private val query : String,
+                            private val api: GithubApi) : DataSource.Factory<Int, User>(){
 
     val sourceLiveData = MutableLiveData<UserDataSource>()
 

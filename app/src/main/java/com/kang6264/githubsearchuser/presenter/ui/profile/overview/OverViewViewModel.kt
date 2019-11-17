@@ -1,4 +1,4 @@
-package com.kang6264.githubsearchuser.presenter.ui.profile
+package com.kang6264.githubsearchuser.presenter.ui.profile.overview
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData

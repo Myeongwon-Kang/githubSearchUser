@@ -1,15 +1,13 @@
-package com.kang6264.githubsearchuser.presenter.ui.profile
+package com.kang6264.githubsearchuser.presenter.ui.profile.overview
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-import com.kang6264.githubsearchuser.R
 import com.kang6264.githubsearchuser.databinding.OverViewFragmentBinding
 
 class OverViewFragment : Fragment() {
@@ -18,7 +16,7 @@ class OverViewFragment : Fragment() {
     var binding : OverViewFragmentBinding? = null
 
     companion object {
-        fun newInstance(login: String?) : OverViewFragment{
+        fun newInstance(login: String?) : OverViewFragment {
             return OverViewFragment().apply {
                 arguments = Bundle().apply {
                     putString("login", login)

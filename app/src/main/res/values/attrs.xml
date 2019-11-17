@@ -1,0 +1,3 @@
+<resources>
+    <attr name="icon_color" format="color|reference"/>
+</resources>

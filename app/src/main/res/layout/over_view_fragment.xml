@@ -8,13 +8,13 @@
 
         <variable
             name="viewModel"
-            type="com.kang6264.githubsearchuser.presenter.ui.profile.OverViewViewModel" />
+            type="com.kang6264.githubsearchuser.presenter.ui.profile.overview.OverViewViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presenter.ui.profile.OverViewFragment">
+        tools:context=".presenter.ui.profile.overview.OverViewFragment">
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/profile"
