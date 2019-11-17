@@ -1,9 +1,10 @@
 # githubSearchUser
 
 사용라이브러리
+- Kotlin
 - clean architecture
 - Fresco
-- Dagger2
+- Koin
 - Retrofit
 - RxJava
 - RxAndroid
